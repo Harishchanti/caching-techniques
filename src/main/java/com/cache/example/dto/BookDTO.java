@@ -10,55 +10,21 @@ public class BookDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
-	private double cost;
 
 	public BookDTO() {
 
 	}
 
-	public BookDTO(int id, String name, double cost) {
+	public BookDTO(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.cost = cost;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	@Override
-	public String toString() {
-		return "BookDTO [id=" + id + ", name=" + name + ", cost=" + cost + "]";
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public double isCost() {
-		return cost;
-	}
-
-	public void setCost(double cost) {
-		this.cost = cost;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(cost);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -73,8 +39,6 @@ public class BookDTO implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		BookDTO other = (BookDTO) obj;
-		if (Double.doubleToLongBits(cost) != Double.doubleToLongBits(other.cost))
-			return false;
 		if (id != other.id)
 			return false;
 		if (name == null) {
@@ -84,5 +48,29 @@ public class BookDTO implements Serializable {
 			return false;
 		return true;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "BookDTO [id=" + id + ", name=" + name + "]";
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	
+	
 
 }
