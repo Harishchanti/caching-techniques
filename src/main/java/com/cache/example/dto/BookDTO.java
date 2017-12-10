@@ -10,6 +10,15 @@ public class BookDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String name;
+	private double cost;
+
+	public double getCost() {
+		return cost;
+	}
+
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
 
 	public BookDTO() {
 

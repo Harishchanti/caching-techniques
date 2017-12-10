@@ -16,7 +16,8 @@ import com.cache.example.services.CacheFactory;
 import com.cache.example.services.CacheService;
 import com.cache.example.services.CacheType;
 
-@RestController("/api")
+@RestController
+@RequestMapping("/api")
 public class BookController {
 
 	@Autowired
@@ -35,12 +36,11 @@ public class BookController {
 	public ResponseEntity<BookDTO> get(@RequestParam(value = "key", required = true) String key,
 			@RequestParam(value = "type", defaultValue = "aerospike", required = false) String type) {
 		CacheService cacheService = cacheFactory.getCacheObject(getCacheType(type));
-		Object value;
-		if ((value = cacheService.get(key)) == null) {
+		BookDTO value;
+		if ((value = cacheService.get(key,BookDTO.class)) == null) {
 			return new ResponseEntity<BookDTO>(new BookDTO(), HttpStatus.NO_CONTENT);
 		}
-		BookDTO book = (BookDTO) value;
-		return new ResponseEntity<BookDTO>(book, HttpStatus.OK);
+		return new ResponseEntity<BookDTO>(value, HttpStatus.OK);
 	}
 
 	private CacheType getCacheType(String type) {

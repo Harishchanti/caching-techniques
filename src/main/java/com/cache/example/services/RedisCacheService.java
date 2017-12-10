@@ -9,12 +9,10 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import com.cache.example.dto.BookDTO;
-
 @Service
 public class RedisCacheService implements CacheService {
 
-	private static final String HASH_KEY = "Student";
+	private static final String HASH_KEY = "Books";
 
 	private final Logger log = LoggerFactory.getLogger(RedisCacheService.class);
 	@Autowired
@@ -45,19 +43,21 @@ public class RedisCacheService implements CacheService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Object get(String key) {
+	public <T> T get(String key,Class<T> T) {
 		Object bookdto = null;
 		try {
 			bookdto = hashOps.get(key,HASH_KEY);
 		} catch (Exception e) {
 			log.error("Error while getting key : {}", key);
 		}
-		return bookdto;
+		return T.cast(bookdto);
 	}
 
 	@Override
 	public CacheType getCacheType() {
 		return CacheType.REDIS;
 	}
+
+	
 
 }

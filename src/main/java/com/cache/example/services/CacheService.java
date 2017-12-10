@@ -2,6 +2,6 @@ package com.cache.example.services;
 
 public interface CacheService {
 	public boolean put(String key,Object value);
-	public Object get(String  key);
+	public <T> T get(String  key,Class<T> T);
 	public CacheType getCacheType();
 }

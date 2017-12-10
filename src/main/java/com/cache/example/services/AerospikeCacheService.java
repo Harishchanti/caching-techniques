@@ -48,7 +48,7 @@ public class AerospikeCacheService implements CacheService {
 	}
 
 	@Override
-	public Object get(String key) {
+	public <T> T get(String key,Class<T> T) {
 		Object bookDTO = null;
 		//BookDTO bookDTO = null;
 		try {
@@ -64,7 +64,7 @@ public class AerospikeCacheService implements CacheService {
 			e.printStackTrace();
 		}
 
-		return bookDTO;
+		return T.cast(bookDTO);
 	}
 
 	@Override
