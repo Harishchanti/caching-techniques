@@ -1,6 +1,6 @@
 This is project contains Spring boot applcition demonstrating how to use Aerospike and Redis cache.Factory Design pattren is used
 
-Use following curls request to test this application :
+Test this application as below:
 
 Prerequisite
 
