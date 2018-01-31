@@ -16,6 +16,7 @@ import com.cache.example.services.CacheFactory;
 import com.cache.example.services.CacheService;
 import com.cache.example.services.CacheType;
 
+
 @RestController
 @RequestMapping("/api")
 public class BookController {
@@ -23,6 +24,7 @@ public class BookController {
 	@Autowired
 	CacheFactory cacheFactory;
 
+	
 	@RequestMapping(method = RequestMethod.POST, value = "/book", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public boolean put(@RequestBody BookDTO bootDto, @RequestParam(value = "key", required = true) String key,

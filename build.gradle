@@ -45,11 +45,11 @@ dependencies {
 		compile group: 'org.springframework.boot', name: 'spring-boot-starter-redis', version: '1.4.7.RELEASE'
 		compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent', version: '1.4.7.RELEASE'
 		
-		//compile(group: 'org.springframework.data', name: 'spring-data-redis', version: '1.6.2.RELEASE'){
-        //     exclude(module: 'slf4j-api')
-		//}
-		//compile group: 'redis.clients', name: 'jedis', version: '2.6.2'
-		//compile 'org.springframework.boot', name:'spring-boot-starter-redis'
+		
+		
+		compile "io.prometheus:simpleclient_spring_boot:0.0.21"
+		compile "io.prometheus:simpleclient_hotspot:0.0.21"
+		compile "io.prometheus:simpleclient_dropwizard:0.0.21"
 		
 }
 
