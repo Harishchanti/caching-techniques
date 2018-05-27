@@ -1,4 +1,7 @@
-This is project contains Spring boot applcition demonstrating how to use Aerospike and Redis cache.Factory Design pattren is used
+This is project contains Spring boot applcition demonstrating how to use Aerospike and Redis cache and monotoring using prometheus (time serices data base).
+
+- Used Factory Design pattren
+
 
 Test this application as below:
 
@@ -10,6 +13,25 @@ https://www.aerospike.com/docs/operations/install/tools/ubuntu/index.html
 Install Redis:
 https://redis.io/topics/quickstart
 
+Install Promotheus and the targate scrapping endpoint to this Application:
+you can start seeing application metrics at  http://localhost:9090/metrics
+
+https://prometheus.io/docs/prometheus/latest/getting_started/
+
+
+Use Grapfana to represent the metrics graphically.
+
+RUN GRAFANA:
+$ docker run -d -p 3000:3000 grafana/grafana
+
+or sudo docker run -d -p 5000:3000 grafana/grafana
+
+
+http://localhost:5000/login
+
+
+
+Once the application starts runnning 
 To put Data in Aerospike:
 
 curl -X POST \
