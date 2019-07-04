@@ -1,4 +1,4 @@
-This is project contains Spring boot applcition demonstrating how to use Aerospike and Redis cache and monotoring using prometheus (time serices data base).
+This Project contains Spring boot applcition demonstrating how to use Aerospike and Redis cache and monotoring using prometheus (time serices data base).
 
 - Used Factory Design pattren
 
